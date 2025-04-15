@@ -7,6 +7,13 @@ export interface Product {
   stock: number;
 }
 
+
+// type Item = Product & number; 
+export interface Item{
+  product:Product;
+  quantity:number;
+}
+
 export const PRODUCTS: Product[] = [
   {
     id: 1,

@@ -1,3 +1,21 @@
 <div class="cart-container">
   <h2>Your Cart 🛒</h2>
+
+@if(getItems().length > 0)
+{  
+  <div class="product-list">
+    @for (item of getItems(); track item.product.id) {
+    <app-cart-item [item]="item"></app-cart-item>
+  }
+  </div>
+  <div class="cart-footer" >    
+    <strong>Total: {{ getTotalPrice() }}</strong>    
+    <button (click)="clearCart()">Clear Cart</button>
+  </div>
+
+}
+@else{
+  <div>Your cart is empty.</div>
+}
+
 </div>
